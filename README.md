@@ -13,10 +13,12 @@ A simple human recognition api for re-ID usage, power by paper [In Defense of th
 3. Numpy
 
 ## Workflow
-1. Use opencv dnn module and use caffemodel to detection human in an image.
-2. Crop and resize all human(pedestrian) and resize to 256x128 images.
-3. Put image to resnet-50 human feature embedding extractor and get a 128-D feature array.
-4. Compare two human by using euclidean distance, the distance means the similarity of two image.
+1. Download model from Google drive https://drive.google.com/open?id=1kql_aaM-rnMISOzl1Y2Fq5XHpxad8gMT
+2. Unzip ```unzip model.zip```
+3. Use opencv dnn module and use caffemodel to detection human in an image.
+4. Crop and resize all human(pedestrian) and resize to 256x128 images.
+5. Put image to resnet-50 human feature embedding extractor and get a 128-D feature array.
+6. Compare two human by using euclidean distance, the distance means the similarity of two image.
 
 ## Example code
 ```
