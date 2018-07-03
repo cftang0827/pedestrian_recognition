@@ -20,7 +20,12 @@ A simple human recognition api for re-ID usage, power by paper [In Defense of th
 
 ## Example code
 ```
-TODO
+img1 = cv2.imread('test/test1.png')[:,:,::-1]
+img1_location = api.human_locations(img1)
+img_1_human = api.crop_human(img1, img1_location)
+human_1_1 = img_1_human[0]
+human_1_1_vector = api.human_vector(human_1_1)
+# Do another people, and compare
 ```
 
 ## Acknowledgement and reference
