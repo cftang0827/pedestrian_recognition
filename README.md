@@ -38,7 +38,11 @@ Here is the google drive link:
 https://drive.google.com/file/d/1JoJJ-rIrqXNrzrx12Ih4zFk09SYsKINC/view?usp=sharing
 
 And the evaluation score of the model is:
+```
 mAP: 64.19% | top-1: 81.44% top-2: 87.80% | top-5: 92.93% | top-10: 95.67%
+```
+![GitHub Logo](https://github.com/cftang0827/human_recognition/blob/mobilenet/mobilenet_train_result.png?raw=true)
+
 
 Please use mobilenet branch and download the pretrained model from the link and replace original resnet model
 
