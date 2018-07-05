@@ -1,7 +1,7 @@
 import tensorflow as tf 
 import numpy as np 
 import cv2 
-import nets.resnet_v1_50 as model
+import nets.mobilenet_v1_1_224 as model
 import heads.fc1024 as head
 
 # Tensorflow human re-ID feature descriptor model
