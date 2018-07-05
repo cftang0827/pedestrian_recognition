@@ -30,6 +30,18 @@ human_1_1_vector = api.human_vector(human_1_1)
 # Do another people, and compare
 ```
 
+## Add Mobilenet backbone support
+Thanks to the original repo, I trained a mobilenet backbone model which can accerlerate the speed of human embedding. You can check the time difference between mobilenet and resnet-50
+
+Also, attached is the mobilenet backbone pretrained model that I trained.
+Here is the google drive link:
+https://drive.google.com/file/d/1JoJJ-rIrqXNrzrx12Ih4zFk09SYsKINC/view?usp=sharing
+
+And the evaluation score of the model is:
+mAP: 64.19% | top-1: 81.44% top-2: 87.80% | top-5: 92.93% | top-10: 95.67%
+
+Please use mobilenet branch and download the pretrained model from the link and replace original resnet model
+
 ## Acknowledgement and reference
 1. https://github.com/VisualComputingInstitute/triplet-reid
 2. https://github.com/chuanqi305/MobileNet-SSD
