@@ -1,4 +1,4 @@
-# human_recognition
+# pedestrian_recognition
 A simple human recognition api for re-ID usage, power by paper [In Defense of the Triplet Loss for Person Re-Identification](https://arxiv.org/abs/1703.07737) and [MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications]( https://arxiv.org/abs/1704.04861)
 
 
