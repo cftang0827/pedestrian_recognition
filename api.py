@@ -63,10 +63,10 @@ def human_locations(frame, thr=0.5):
             heightFactor = frame.shape[0]/300.0  
             widthFactor = frame.shape[1]/300.0 
             # Scale object detection to frame
-            xLeftBottom = int(widthFactor * xLeftBottom) 
-            yLeftBottom = int(heightFactor * yLeftBottom)
-            xRightTop   = int(widthFactor * xRightTop)
-            yRightTop   = int(heightFactor * yRightTop)
+            xLeftBottom = max(0, int(widthFactor * xLeftBottom)) 
+            yLeftBottom = max(0, int(heightFactor * yLeftBottom))
+            xRightTop   = max(0, int(widthFactor * xRightTop))
+            yRightTop   = max(0, int(heightFactor * yRightTop))
             if class_id in classNames:
                 output.append([(xLeftBottom, yLeftBottom), (xRightTop, yRightTop)])
 
