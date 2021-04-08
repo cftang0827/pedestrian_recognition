@@ -12,16 +12,31 @@ A simple human recognition api for re-ID usage, power by paper [In Defense of th
 2. opencv 3.3 (Need opencv dnn library)
 3. Numpy
 
+## Prepare the model
+Since we are using third-party pretrain model, therefore, I will prepare the way to download it rather than package them toghther.
+Special thanks to these two repo for providing model.
+1. https://github.com/VisualComputingInstitute/triplet-reid
+2. https://github.com/chuanqi305/MobileNet-SSD
+
+```bash
+#opencv MobileNet model
+wget https://raw.githubusercontent.com/chuanqi305/MobileNet-SSD/master/deploy.prototxt -P model
+wget https://drive.google.com/u/0/uc?id=0B3gersZ2cHIxVFI1Rjd5aDgwOG8&export=download -O model/MobileNetSSD_deploy.caffemodel
+#reid model
+wget https://github.com/VisualComputingInstitute/triplet-reid/releases/download/250eb1/market1501_weights.zip -P model
+unzip model/market1501_weights.zip -d model
+```
 ## Workflow
-1. Download model from Google drive https://drive.google.com/file/d/1-2KHQms_RHYIrHwFQg-Vln-NEyhjj5_p/view?usp=sharing
-2. Unzip ```unzip model.zip```
-3. Use opencv dnn module and use caffemodel to detection human in an image.
-4. Crop and resize all human(pedestrian) and resize to 256x128 images.
-5. Put image to resnet-50 human feature embedding extractor and get a 128-D feature array.
-6. Compare two human by using euclidean distance, the distance means the similarity of two image.
+1. Use opencv dnn module and use caffemodel to detection human in an image.
+2. Crop and resize all human(pedestrian) and resize to 256x128 images.
+3. Put image to resnet-50 human feature embedding extractor and get a 128-D feature array.
+4. Compare two human by using euclidean distance, the distance means the similarity of two image.
 
 ## Example code
 ```
+import cv2
+import api
+
 img1 = cv2.imread('test/test1.png')[:,:,::-1]
 img1_location = api.human_locations(img1)
 img_1_human = api.crop_human(img1, img1_location)
