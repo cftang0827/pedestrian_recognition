@@ -12,6 +12,11 @@ A simple human recognition api for re-ID usage, power by paper [In Defense of th
 2. opencv 3.3 (Need opencv dnn library)
 3. Numpy
 
+- Install package with requirements.txt file
+```bash
+pip install -r requirements.txt
+```
+
 ## Prepare the model
 Since we are using third-party pretrain model, therefore, I will prepare the way to download it rather than package them toghther.
 Special thanks to these two repo for providing model.
